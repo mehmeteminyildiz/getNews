@@ -47,6 +47,11 @@
                 android:background="@drawable/rounded_edittext_bordered"
                 android:fontFamily="@font/titillium_web"
                 android:hint="type..."
+                android:drawableTint="@color/g_gray2"
+                android:inputType="text"
+                android:drawableEnd="@drawable/ic_baseline_search_24"
+                android:maxLines="1"
+                android:singleLine="true"
                 android:imeOptions="actionSearch"
                 android:padding="12dp" />
 

@@ -16,6 +16,7 @@
     <color name="g_gray">#393E46</color>
     <color name="g_grey_light">#EDEFF4</color>
     <color name="g_border">#DDDDDD</color>
+    <color name="g_gray2">#AEAEAE</color>
 
 
 </resources>
