@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.mey.getnews.R
 import com.mey.getnews.data.model.Articles
 import com.mey.getnews.databinding.CardNewsItemBinding
+import com.mey.getnews.util.Constants.PLACE_HOLDER_URL
 
 /**
 created by Mehmet E. Yıldız
@@ -60,6 +61,12 @@ class NewsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             }
             item.urlToImage?.let {
                 Glide.with(context).load(it).placeholder(R.drawable.place_holder).into(imgNew)
+            } ?: run {
+                Glide.with(context)
+                    .load(PLACE_HOLDER_URL)
+                    .into(imgNew)
+
+
             }
         }
     }

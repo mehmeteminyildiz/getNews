@@ -14,47 +14,39 @@ import javax.inject.Inject
 /**
 created by Mehmet E. Yıldız
  **/
-
 @HiltViewModel
-class GetNewsViewModel
-@Inject constructor(
+class GetHotNewsViewModel @Inject constructor(
     private val repository: GetNewsRepository
 ) : ViewModel() {
+    private var _hotNews = MutableLiveData<Resource<Base>>()
+    val hotNews: LiveData<Resource<Base>> get() = _hotNews
 
-    private var _news = MutableLiveData<Resource<Base>>()
-    val news: LiveData<Resource<Base>> get() = _news
-
-    fun getNews(
+    fun getHotNews(
+        country: String?,
+        category: String?,
+        sources: String?,
         query: String?,
-        searchIn: String?,
-        from: String?,
-        to: String?,
-        language: String?,
-        sortBy: String?,
         page: Int,
         pageSize: Int,
-        apiKey: String
+        apiKey: String,
     ) {
-        _news.value = Resource.loading(null)
+        _hotNews.value = Resource.loading(null)
         viewModelScope.launch {
             val response =
-                repository.getNews(
-                    query,
-                    searchIn,
-                    from,
-                    to,
-                    language,
-                    sortBy,
-                    page,
-                    pageSize,
-                    apiKey
+                repository.getHotNews(
+                    country = country,
+                    category = category,
+                    sources = sources,
+                    query = query,
+                    page = page,
+                    pageSize = pageSize,
+                    apiKey = apiKey
                 )
-            _news.value = response
+            _hotNews.value = response
         }
     }
 
     fun clearNews() {
-        _news = MutableLiveData<Resource<Base>>()
+        _hotNews = MutableLiveData<Resource<Base>>()
     }
-
 }

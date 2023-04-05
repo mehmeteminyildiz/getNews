@@ -1,8 +1,7 @@
 package com.mey.getnews.repository
 
-import com.mey.getnews.data.model.NewsResponse
+import com.mey.getnews.data.model.Base
 import com.mey.getnews.util.Resource
-import retrofit2.Response
 
 /**
 created by Mehmet E. Yıldız
@@ -10,14 +9,24 @@ created by Mehmet E. Yıldız
 
 interface GetNewsRepositoryInterface {
     suspend fun getNews(
-        query: String,
-        searchIn: String,
-        from: String,
-        to: String,
-        language: String,
-        sortBy: String,
+        query: String? = null,
+        searchIn: String?,
+        from: String?,
+        to: String?,
+        language: String?,
+        sortBy: String?,
         page: Int,
         pageSize: Int,
         apiKey: String
-    )  : Resource<NewsResponse>
+    ): Resource<Base>
+
+    suspend fun getHotNews(
+        country: String?,
+        category: String?,
+        sources: String?,
+        query: String?,
+        page: Int,
+        pageSize: Int,
+        apiKey: String
+    ): Resource<Base>
 }

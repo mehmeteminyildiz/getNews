@@ -46,7 +46,7 @@
                 app:itemBackground="@color/g_0"
                 app:itemIconTint="@drawable/bottom_nav_color"
                 app:itemTextColor="@color/g_grey_light"
-                app:labelVisibilityMode="auto"
+                app:labelVisibilityMode="selected"
                 app:menu="@menu/bottom_menu" />
 
         </com.google.android.material.bottomappbar.BottomAppBar>
