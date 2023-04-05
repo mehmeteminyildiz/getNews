@@ -3,7 +3,7 @@ package com.mey.getnews.util
 object Constants {
 
     /** API KEY FOR NEWS API **/
-    const val API_KEY = "57edbd467877433697211e614d3111a9"
+    const val API_KEY = "YOUR_API_KEY"
 
     /** BASE URL FOR PIXABAY **/
     const val BASE_URL = "https://newsapi.org"

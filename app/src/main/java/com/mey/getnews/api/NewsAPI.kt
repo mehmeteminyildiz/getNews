@@ -20,6 +20,7 @@ interface NewsAPI {
         @Query("language") language: String,
         @Query("sortBy") sortBy: String,
         @Query("page") page: Int,
-        @Query("pageSize") pageSize: Int
+        @Query("pageSize") pageSize: Int,
+        @Query("apiKey") apiKey: String
     ): Response<NewsResponse>
 }
