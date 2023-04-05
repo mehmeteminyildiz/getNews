@@ -1,4 +1,4 @@
-package com.mey.getnews
+package com.mey.getnews.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.mey.getnews.R
 import com.mey.getnews.databinding.ActivityMainBinding
 import timber.log.Timber
 
